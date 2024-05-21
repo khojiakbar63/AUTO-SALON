@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTO SALON</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="wrapper">
+
+            <div class="wrapper--left">
+
+                <!-- LOGIN FORM -->
+                <form id="login-form" class="wrapper--left--form">
+                    <h2 class="wrapper--left--form-title">Login</h2>
+                    <input id="username-input" class="wrapper--left--form-input" type="text" placeholder="Enter your name..." required>
+                    <input id="email-input" class="wrapper--left--form-input" type="email" placeholder="Enter your email..." required>
+                    <button type="submit" class="button wrapper--left--form-btn">Submit</button>
+                </form>
+
+                <!-- FUNCTION BUTTONS -->
+                <div id="show-btns" class="wrapper--left--buttons show-btns">
+                    <button id="add-btn" class="button">ADD</button>
+                    <button id="show-btn" class="button">SHOW</button>
+                    <button id="delete-btn" class="button">DELETE</button>
+                        <form id="delete-form" class="delete-form">
+                            <input id="delete-input" class="wrapper--left--form-input" type="number" placeholder="ID: ">
+                            <button type="reset"><img id="delete-cross" src="./images/cross.svg" alt="cross"></button>
+                        </form>
+                    <button id="search-btn" class="button">SEARCH</button>
+                        <form id="search-form" class="search-form">
+                            <input type="text" class="wrapper--left--form-input" id="search-input" placeholder="NAME:">
+                            <button id="search-icon" type="reset"><img src="./images/search.svg" alt="search"></button>
+                        </form>
+                    <button class="button">SORT</button>
+                </div>
+            </div>
+
+            <div class="wrapper--right">
+                <form id="add-form" class="wrapper--right--form">
+                    <input type="text" class="wrapper--left--form-input" id="car-name" placeholder="Name...">
+                        <br>
+                    <input type="text" class="wrapper--left--form-input" id="model" placeholder="Model">
+                        <br>
+                    <input type="text" class="wrapper--left--form-input" id="color" placeholder="Color">
+                        <br>
+                    <input type="text" class="wrapper--left--form-input" id="year" placeholder="Year ex: 2000">
+                        <br>
+                    <input type="number" class="wrapper--left--form-input" id="price" placeholder="Price">
+                        <br>
+                    <input type="number" class="wrapper--left--form-input" id="stock" placeholder="Stock">
+                    
+                    <button class="button wrapper--right--form--btn" type="submit">ADD THE CAR</button>
+                </form>
+
+
+                <div id="free-space">
+                </div>
+
+                <h2>Heading</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequuntur quisquam deserunt dolore incidunt fugit odit veritatis adipisci molestiae soluta.</p>
+            </div>
+
+            
+            <button id="exit-btn" class="button">EXIT</button>
+        </div>
+
+    </div>
+
+<script src="app.js"></script>
+</body>
+</html>
