@@ -14,6 +14,8 @@ let searchBtn = document.querySelector('#search-btn');
 let searchForm = document.querySelector('#search-form')
 let searchIcon = document.querySelector('#search-icon')
 let searchInput = document.querySelector('#search-input')
+let sortBtn = document.querySelector('#sort-btn')
+let sortBy = document.querySelector('#sort-by')
 // Add form inputs
 let carNameInput = document.querySelector('#car-name');
 let carModelInput = document.querySelector('#model');
@@ -26,7 +28,6 @@ let deleteInput = document.querySelector('#delete-input');
 let deleteForm = document.querySelector('#delete-form');
 
 let exitBtn = document.querySelector('#exit-btn');
-
 let wrapperStyle = document.querySelector('.wrapper')
 // LOCAL STORAGE:
 let All_CARS = JSON.parse(localStorage.getItem("Cars")) || [];
@@ -41,6 +42,7 @@ const showButtons = (e) => {
     if(usernameInput.value.trim() != '' && emailInput.value.trim() != '') {
         showBtns.classList.add('show');
         loginForm.classList.add('hide')
+        exitBtn.classList.add('show')
     }else{
         alert("Fill the form!")
     }
@@ -159,7 +161,33 @@ const searchCar = () => {
      }
 
 }
+// Exit from form function 
+const exitFromForm = () => {
+    showBtns.classList.add('hide')
+    loginForm.classList.remove('hide')
+    freeSpace.innerHTML = ''
+    addForm.innerHTML = ''
+}
 // Sort cars
+const sortCars = () => {
+    if(sortBy.value === 'stock'){
+        All_CARS.sort((a, b) => a.stock - b.stock) 
+        showCarList()
+    } else if(sortBy.value === 'price') {
+        All_CARS.sort((a, b) => a.price - b.price) 
+        showCarList()
+    } else if (sortBy.value === 'year') {
+        All_CARS.sort((a, b) => a.year - b.year) 
+        showCarList()
+    } else if (sortBy.value === 'model') {
+        All_CARS.sort((a, b) => a.model - b.model) 
+        showCarList()
+    }else {
+        All_CARS.sort((a, b) => a.name.localeCompare(b.name))
+        showCarList();
+    }
+}
+// const 
 // EVENTS
 loginForm.addEventListener("submit", showButtons);
 addForm.addEventListener('submit', submitAddForm)
@@ -170,3 +198,4 @@ deleteBtn.addEventListener('click', toggleDeleteForm)
 searchBtn.addEventListener('click', toggleSearchForm)
 searchIcon.addEventListener('click', searchCar)
 exitBtn.addEventListener('click', exitFromForm)
+sortBtn.addEventListener('click', toggleSelect)

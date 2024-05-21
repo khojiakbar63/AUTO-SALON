@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         
-        <div class="wrapper">
+        <div id="wrapper" class="wrapper">
 
             <div class="wrapper--left">
 
@@ -37,7 +37,16 @@
                             <input type="text" class="wrapper--left--form-input" id="search-input" placeholder="NAME:">
                             <button id="search-icon" type="reset"><img src="./images/search.svg" alt="search"></button>
                         </form>
-                    <button class="button">SORT</button>
+                    <button id="sort-btn" class="button">SORT</button>
+                    <form id="sort-form">
+                        <select id="sort-by">
+                            <option value="">Choose</option>
+                            <option value="stock">Stock</option>
+                            <option value="price">Price</option>
+                            <option value="year">Year</option>
+                            <option value="model">Model</option>
+                        </select>
+                    </form>
                 </div>
             </div>
 
@@ -67,7 +76,7 @@
             </div>
 
             
-            <button id="exit-btn" class="button">EXIT</button>
+            <button id="exit-btn" class="exit-btn button">EXIT</button>
         </div>
 
     </div>
