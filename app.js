@@ -73,31 +73,9 @@ const submitAddForm = (e) => {
     localStorage.setItem('Cars', JSON.stringify(All_CARS))
     addForm.reset()
 }
-// Show car list function
-const showCarList = () => {
-    wrapperStyle.classList.add('orangeBg')
-    addForm.classList.remove('show-block')
-    freeSpace.innerHTML = '';
-    freeSpace.innerHTML = `
-    <h4 class='show-car-list'>Available Cars List</h4>
-    <br>
-    `
-    All_CARS.forEach(car => {
-        freeSpace.innerHTML += `
-            <div>
-                <h5 class='show-car-list'>ID:     ${car.id}</h5>
-                <h5 class='show-car-list'>Name:   ${car.name}</h5>
-                <h5 class='show-car-list'>Model:  ${car.model}</h5>
-                <h5 class='show-car-list'>Color:  ${car.color}</h5>
-                <h5 class='show-car-list'>Year:   ${car.year}</h5>
-                <h5 class='show-car-list'>Price:  $${car.price}</h5>
-                <h5 class='show-car-list'>Stock:  ${car.stock}</h5>
-                <br>
-            </div>
-       
-        `
-    });
-}
+// show car list
+// !
+
 // Delete car function
 const deleteCar = () => {
     All_CARS.forEach(car => {
