@@ -16,6 +16,7 @@ let searchIcon = document.querySelector('#search-icon')
 let searchInput = document.querySelector('#search-input')
 let sortBtn = document.querySelector('#sort-btn')
 let sortBy = document.querySelector('#sort-by')
+let sortBtnIcon = document.querySelector('#sort-btn-icon')
 // Add form inputs
 let carNameInput = document.querySelector('#car-name');
 let carModelInput = document.querySelector('#model');
@@ -154,9 +155,7 @@ const searchCar = () => {
             <h5 class='show-car-list'>Stock:  ${car.stock}</h5>
             <br>
             `
-        
-        })
-            
+        })  
         
      }
 
@@ -169,23 +168,29 @@ const exitFromForm = () => {
     addForm.innerHTML = ''
 }
 // Sort cars
-const sortCars = () => {
+const sortCars = (e) => {
+    e.preventDefault()
     if(sortBy.value === 'stock'){
-        All_CARS.sort((a, b) => a.stock - b.stock) 
+        All_CARS.sort((a, b) => b.stock - a.stock) 
         showCarList()
     } else if(sortBy.value === 'price') {
-        All_CARS.sort((a, b) => a.price - b.price) 
+        All_CARS.sort((a, b) => b.stock - a.stock) 
         showCarList()
     } else if (sortBy.value === 'year') {
-        All_CARS.sort((a, b) => a.year - b.year) 
+        All_CARS.sort((a, b) => b.stock - a.stock) 
         showCarList()
     } else if (sortBy.value === 'model') {
-        All_CARS.sort((a, b) => a.model - b.model) 
+        All_CARS.sort((a, b) => b.stock - a.stock) 
         showCarList()
     }else {
         All_CARS.sort((a, b) => a.name.localeCompare(b.name))
         showCarList();
     }
+}
+
+const toggleSelect = () => {
+    sortBy.classList.toggle('show')
+    sortBtnIcon.classList.toggle('show')
 }
 // const 
 // EVENTS
@@ -199,3 +204,4 @@ searchBtn.addEventListener('click', toggleSearchForm)
 searchIcon.addEventListener('click', searchCar)
 exitBtn.addEventListener('click', exitFromForm)
 sortBtn.addEventListener('click', toggleSelect)
+sortBtnIcon.addEventListener('click', sortCars)

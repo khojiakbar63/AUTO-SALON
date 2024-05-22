@@ -109,6 +109,9 @@ body {
     }
 }
 
+.sort-by {
+    display: none;
+}
 .darkBg {
     background-color: #0A0D17;
 }
@@ -144,6 +147,19 @@ body {
     border-bottom: #8a8484 1px solid;
     border-radius: 2px;
 
+}
+#sort-form{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#sort-btn-icon {
+    img{
+        width: 20px;
+    }
+}
+.sort-btn-icon{
+    display: none;
 }
 .delete-form{
     display: none;
