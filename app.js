@@ -95,7 +95,7 @@ const toggleSearchForm = () => {
     searchForm.classList.toggle('show-block')
 }
 // Search car function
-const searchCar = () => {
+// const searchCar = () => {
      let wantedCar = All_CARS.find(car => car.name == searchInput.value)
      if(wantedCar) {
          freeSpace.innerHTML = `
