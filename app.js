@@ -18,20 +18,9 @@ let sortBtn = document.querySelector('#sort-btn')
 let sortBy = document.querySelector('#sort-by')
 let sortBtnIcon = document.querySelector('#sort-btn-icon')
 // Add form inputs
-let carNameInput = document.querySelector('#car-name');
-let carModelInput = document.querySelector('#model');
-let carColorInput = document.querySelector('#color');
-let carYearInput = document.querySelector('#year');
-let carPriceInput = document.querySelector('#price');
-let carStockInput = document.querySelector('#stock');
-
-let deleteInput = document.querySelector('#delete-input');
-let deleteForm = document.querySelector('#delete-form');
-
-let exitBtn = document.querySelector('#exit-btn');
-let wrapperStyle = document.querySelector('.wrapper')
-// LOCAL STORAGE:
-let All_CARS = JSON.parse(localStorage.getItem("Cars")) || [];
+// -------......
+// .
+// -----.....
 
 // FUNCTIONS
 
