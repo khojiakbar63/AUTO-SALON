@@ -19,8 +19,20 @@ let sortBy = document.querySelector('#sort-by')
 let sortBtnIcon = document.querySelector('#sort-btn-icon')
 // Add form inputs
 // -------......
-// .
-// -----.....
+let carNameInput = document.querySelector('#car-name');
+let carModelInput = document.querySelector('#model');
+let carColorInput = document.querySelector('#color');
+let carYearInput = document.querySelector('#year');
+let carPriceInput = document.querySelector('#price');
+let carStockInput = document.querySelector('#stock');
+
+let deleteInput = document.querySelector('#delete-input');
+let deleteForm = document.querySelector('#delete-form');
+
+let exitBtn = document.querySelector('#exit-btn');
+let wrapperStyle = document.querySelector('.wrapper')
+// LOCAL STORAGE:
+let All_CARS = JSON.parse(localStorage.getItem("Cars")) || [];
 
 // FUNCTIONS
 
@@ -73,8 +85,32 @@ const submitAddForm = (e) => {
     localStorage.setItem('Cars', JSON.stringify(All_CARS))
     addForm.reset()
 }
-// show car list
-// !
+
+// Show car list function
+const showCarList = () => {
+    wrapperStyle.classList.add('orangeBg')
+    addForm.classList.remove('show-block')
+    freeSpace.innerHTML = '';
+    freeSpace.innerHTML = `
+    <h4 class='show-car-list'>Available Cars List</h4>
+    <br>
+    `
+    All_CARS.forEach(car => {
+        freeSpace.innerHTML += `
+            <div>
+                <h5 class='show-car-list'>ID:     ${car.id}</h5>
+                <h5 class='show-car-list'>Name:   ${car.name}</h5>
+                <h5 class='show-car-list'>Model:  ${car.model}</h5>
+                <h5 class='show-car-list'>Color:  ${car.color}</h5>
+                <h5 class='show-car-list'>Year:   ${car.year}</h5>
+                <h5 class='show-car-list'>Price:  $${car.price}</h5>
+                <h5 class='show-car-list'>Stock:  ${car.stock}</h5>
+                <br>
+            </div>
+       
+        `
+    });
+}
 
 // Delete car function
 const deleteCar = () => {
@@ -126,7 +162,7 @@ const toggleSearchForm = () => {
         
      }
 
-}
+
 // Exit from form function 
 const exitFromForm = () => {
     showBtns.classList.add('hide')
